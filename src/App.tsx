@@ -5,12 +5,26 @@ import styles from './App.module.css';
 import TaskForm from './components/TaskForm/TaskForm';
 import TaskList from './components/TaskList/TaskList';
 import { ITask } from './interfaces/Task';
+import Modal from './components/Modal/Modal';
 
 function App() {
     const [taskList, setTaskList] = useState<ITask[]>([]);
 
+    const deleteTask = (id: number) => {
+        setTaskList(
+            taskList.filter((task) => {
+                return task.id !== id;
+            })
+        );
+    };
+
     return (
         <div>
+            <Modal
+                children={
+                    <TaskForm btnText='Editar Tarefa' taskList={taskList} />
+                }
+            />
             <Header />
             <main className={styles.main}>
                 <div>
@@ -23,7 +37,7 @@ function App() {
                 </div>
                 <div>
                     <h2>Suas tarefas</h2>
-                    <TaskList />
+                    <TaskList taskList={taskList} handleDelete={deleteTask} />
                 </div>
             </main>
             <Footer />
