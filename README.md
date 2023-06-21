@@ -3,6 +3,8 @@
 ## 📋 Projeto de To Do
 Este projeto é uma aplicação de lista de tarefas desenvolvida em React e TypeScript. Ele permite que você crie tarefas, atribuindo a elas um título e uma dificuldade. Além disso, é possível editar as tarefas existentes e excluí-las.
 
+Confira o resultado [aqui](https://to-do-react-ts.netlify.app/)
+
 ## 💡 Funcionalidades
 **Criação de tarefas:** Insira um título e uma dificuldade para criar uma nova tarefa.
 
